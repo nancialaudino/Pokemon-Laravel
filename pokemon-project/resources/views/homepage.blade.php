@@ -28,9 +28,9 @@
                                         <div class="card-image">
                                             <div class="pokemon-card">
                                                 <img class="phone-card" src="{{ asset('images/Dracauf.jpg') }}" alt="pikachu">
+                                                <div class="price-badge">50€</div>
                                             </div>
                                         </div>
-                                        <div class="price-badge">50€</div>
                                         <div class="card-details-form">
                                             <div class="form-group">
                                                 <label>Nom</label>
