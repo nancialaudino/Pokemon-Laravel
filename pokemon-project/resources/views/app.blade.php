@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'PokeMarket')</title>
     {{--<link rel="stylesheet" href="{{ asset('resources/css/app.css') }}"> --}}
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
 <body>
@@ -18,6 +18,7 @@
             <nav class="nav">
                 <button class="nav-btn active" onclick="window.location.href='{{url('/')}}'">Accueil</button>
                 <button class="nav-btn" onclick="window.location.href='{{url('/catalogue')}}'">Pokémon</button>
+                <button class="nav-btn" onclick="window.location.href='{{url('/admin')}}'">Admin</button>
                 <button class="nav-btn download">Download</button>
             </nav>
         </div>
@@ -32,7 +33,6 @@
     </footer>
 
     {{--<script src="{{ asset('resources/js/app.js') }}"></script>--}}
-    @vite('resources/js/app.js')
 
 </body>
 </html>

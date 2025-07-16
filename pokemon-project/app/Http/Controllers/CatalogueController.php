@@ -14,5 +14,12 @@ class CatalogueController extends Controller
         $pokemons = PokemonModel::all();
         return view('catalogue', compact('pokemons'));
     }
+
+        public function show($id)
+    {
+        $pokemon = PokemonModel::findOrFail($id);
+        return view('product', compact('pokemon'));
+    }
+
 }
 

@@ -17,7 +17,11 @@
                             <h3 class="product-name">{{ $pokemon->nom_carte }}</h3>
                             <div class="product-footer">
                                 <span class="product-price">{{ $pokemon->price }}€</span>
-                                <button class="acheter-btn">Acheter</button>
+                                <form action="{{ route('product.show', $pokemon->id_carte) }}" method="GET">
+                                    <button type="submit" class="acheter-btn">Acheter</button>
+                                </form>
+
+                                {{--<button class="acheter-btn" onclick="window.location.href='{{ route('product.show', $pokemon->id_carte) }}'">Acheter</button> --}}
                             </div>
                         </div>
                     </div>
