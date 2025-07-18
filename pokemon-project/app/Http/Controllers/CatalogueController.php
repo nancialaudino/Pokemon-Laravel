@@ -22,4 +22,3 @@ class CatalogueController extends Controller
     }
 
 }
-

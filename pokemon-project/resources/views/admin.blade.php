@@ -2,6 +2,49 @@
 @section('title', 'Administration')
 
 @section('content')
+    <main class="main">
+        <div class="container">
+            <h1 class="catalogue-title">Admin</h1>
+
+            <div class="catalogue-grid">
+                @foreach ($pokemons as $pokemon)
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="{{ asset($pokemon->image) }}" alt="{{ $pokemon->nom_carte }}">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">{{ $pokemon->nom_carte }} - {{ $pokemon->price }}€</h3>
+                            <div class="product-footer">
+                                <button type="button" class="acheter-btn admin" onclick="window.location.href='{{ url('/add') }}'">Ajouter</button>
+
+                                <form action="{{ route('pokemons.edit', $pokemon->id_carte) }}" method="GET" style="display:inline;">
+                                    <button type="submit" class="acheter-btn admin">Modifier</button>
+                                </form>
+
+                                <form action="{{ route('pokemons.delete', $pokemon->id_carte) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce Pokémon ?')" style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="acheter-btn admin">Supprimer</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </main>
+@endsection
+
+
+
+
+{{--
+
+
+@extends('app')
+@section('title', 'Administration')
+
+@section('content')
 
     <main class="main">
         <div class="container">
@@ -25,7 +68,7 @@
                                         @method('DELETE')
                                         <button type="submit" class="acheter-btn admin">Supprimer</button>
                                     </form>
-                                {{--<button class="acheter-btn" onclick="window.location.href='{{ route('product.show', $pokemon->id_carte) }}'">Acheter</button> --}}
+                                //<button class="acheter-btn" onclick="window.location.href='{{ route('product.show', $pokemon->id_carte) }}'">Acheter</button>//
                             </div>
                         </div>
                     </div>
@@ -37,11 +80,10 @@
 
 
 @endsection
+/////////////////////////////////////////////
 
 
 
-
-{{--
 <main class="main">
         <div class="container">
             <h1 class="catalogue-title">Gestion de cartes</h1>

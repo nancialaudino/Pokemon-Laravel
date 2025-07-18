@@ -1,7 +1,7 @@
-//import './bootstrap';
-//import Alpine from 'alpinejs';
+import './bootstrap';
+import Alpine from 'alpinejs';
 import './script';
 
-//window.Alpine = Alpine;
+window.Alpine = Alpine;
 
-//Alpine.start();
+Alpine.start();
